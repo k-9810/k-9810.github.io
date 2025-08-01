@@ -20,10 +20,14 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  height: env(safe-area-inset-top, 20px); /* fallback for older browsers */
+  height: constant(safe-area-inset-top, 20px); /* legacy iOS */
+  height: env(safe-area-inset-top, 20px);      /* modern iOS */
   background-color: var(--header-bg);
-  z-index: 2;
+  z-index: 1000;
 }
+
+
+
 body, html {
   margin: 0;
   padding: 0;
@@ -66,7 +70,9 @@ canvas {
 }
 header {
   position: fixed;
+  top: constant(safe-area-inset-top, 20px);
   top: env(safe-area-inset-top, 20px); /* pushes header below the top bar */
+  
   width: 100%;
   padding: 1rem;
   text-align: center;
@@ -150,6 +156,7 @@ button:hover {
 #themeToggle:hover {
   background-color: rgba(255, 255, 255, 0.2);
 }
+
 
 
 
