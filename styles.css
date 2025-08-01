@@ -58,14 +58,15 @@ canvas {
 }
 header {
   position: fixed;
-  top: 0;
+  top: env(safe-area-inset-top, 20px); /* pushes header below the top bar */
   width: 100%;
   padding: 1rem;
   text-align: center;
-  z-index: 2;
+  z-index: 999;
   background-color: var(--header-bg);
   box-shadow: 0 2px 8px var(--accent-color);
 }
+
 
 .logo {
   font-size: 1.25rem;
@@ -141,4 +142,5 @@ button:hover {
 #themeToggle:hover {
   background-color: rgba(255, 255, 255, 0.2);
 }
+
 
