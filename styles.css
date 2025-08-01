@@ -7,7 +7,15 @@
   --header-bg: rgba(58, 141, 223, 0.8);
   --content-bg: rgba(58, 141, 223, 0.2);
 }
-
+.top-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: env(safe-area-inset-top, 20px); /* fallback for older browsers */
+  background-color: var(--header-bg);
+  z-index: 2;
+}
 body, html {
   margin: 0;
   padding: 0;
@@ -17,7 +25,6 @@ body, html {
   color: #cce6ff;
   transition: background 1s ease;
 }
-
 canvas {
   position: fixed;
   top: 0;
@@ -33,8 +40,6 @@ canvas {
   z-index: 0;
   background: linear-gradient(to bottom, var(--bg-gradient-start), var(--bg-gradient-end));
 }
-
-
 .crt-overlay {
   position: fixed;
   top: 0;
@@ -51,7 +56,6 @@ canvas {
     transparent 4px
   );
 }
-
 header {
   position: fixed;
   top: 0;
@@ -137,3 +141,4 @@ button:hover {
 #themeToggle:hover {
   background-color: rgba(255, 255, 255, 0.2);
 }
+
