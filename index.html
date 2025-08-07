@@ -2,16 +2,17 @@
 <html lang="en">
 <link rel="icon" href="/favicon.ico" type="image/x-icon" />
 <link rel="godicon" href="/god.png" />
-
 <head>
-
-<!-- Basic Meta -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  
+  <!-- Basic Meta -->
 <meta name="description" content="grupogamba — coming soon, YOU WILL BUY">
 
 <!-- Open Graph (Facebook, iMessage, etc.) -->
 <meta property="og:title" content="grupogamba" />
 <meta property="og:description" content="coming soon. YOU WILL BUY" />
-<meta property="og:image" content="https://grupogamba.com/preview.jpg" />
+<meta property="og:image" content="https://grupogamba.com/god.png" />
 <meta property="og:url" content="https://grupogamba.com" />
 <meta property="og:type" content="website" />
 
@@ -19,37 +20,29 @@
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="grupogamba" />
 <meta name="twitter:description" content="coming soon. A creative collective with bold ideas and bold aesthetics." />
-<meta name="twitter:image" content="https://yourdomain.com/preview.jpg" />
+<meta name="twitter:image" content="https://grupogamba.com/god.png" />
 
-  
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   
   <title>grupogamba</title>
   <link rel="stylesheet" href="styles.css" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="top-bar"></div>
-  <div class="background-layer"></div>
-  <div class="crt-overlay"></div>
-  <canvas id="bgCanvas"></canvas>
+<canvas id="glcanvas"></canvas>
+<header id="pageHeader">
+  <div id="fps">FPS: 0</div>
+  <div class="header-title">grupogamba</div>
+</header>
 
-  <header>
-    <div class="logo">grupogamba</div>
-  </header>
-
-  <main>
+<main>
     <section class="content">
       <h1>GAMBA</h1>
       <p>coming soon</p>
       <button>this button does nothing lol</button>
     </section>
   </main>
-
-  <button id="themeToggle" title="Change Theme Color">🎨</button>
-  <script src="script.js"></script>
+  
+<button id="themeToggle" title="Change Theme Color">🎨</button>
+<script src="script.js"></script>
 </body>
 </html>
-
-
