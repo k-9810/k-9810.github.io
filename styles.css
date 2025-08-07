@@ -6,89 +6,87 @@
   --bg-gradient-end: #1a2f4f;
   --header-bg: rgba(58, 141, 223, 0.8);
   --content-bg: rgba(58, 141, 223, 0.2);
+  --accent-dark: #2a6bbf;
+  --content-shadow: #3a8ddf;
+  --button-shadow: #2a6bbf;
+
 }
-html {
-  background-color: var(--bg-gradient-start);
-}
-
-body {
-  background-color: var(--bg-gradient-start);
-}
-
-.top-bar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: constant(safe-area-inset-top, 20px); /* legacy iOS */
-  height: env(safe-area-inset-top, 20px);      /* modern iOS */
-  background-color: var(--header-bg);
-  z-index: 1000;
-}
-
-
-
 body, html {
   margin: 0;
   padding: 0;
-  overflow-x: hidden;
-  font-family: 'Inter', sans-serif;
-  background: linear-gradient(to bottom, var(--bg-gradient-start), var(--bg-gradient-end));
-  color: #cce6ff;
-  transition: background 1s ease;
-}
-canvas {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 0;
-}
-.background-layer {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
+  overflow: hidden;
   height: 100%;
-  z-index: 0;
-  background: linear-gradient(to bottom, var(--bg-gradient-start), var(--bg-gradient-end));
+  background: black;
+  font-family: 'Inter', sans-serif;
 }
-.crt-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 1000%;
-  height: 1000%;
-  z-index: 1;
-  pointer-events: none;
-  background: repeating-linear-gradient(
-    to bottom,
-    rgba(255, 255, 255, 0.03),
-    rgba(255, 255, 255, 0.03) 2px,
-    transparent 2px,
-    transparent 4px
-  );
+
+canvas {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
 }
-header {
+#themeToggle {
+  position: absolute;
+  bottom: 2vh;
+  right: 2vw;
+  width: 12vw;
+  height: 12vw;
+  max-width: 48px;
+  max-height: 48px;
+  font-size: 1.5rem; /* More consistent sizing */
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  transition: background 0.3s ease;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0; /* Remove padding to avoid misalignment */
+}
+
+
+#themeToggle:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+#pageHeader {
   position: fixed;
   top: constant(safe-area-inset-top, 20px);
-  top: env(safe-area-inset-top, 20px); /* pushes header below the top bar */
-  
+  top: env(safe-area-inset-top, 20px);
+  left: 0;
   width: 100%;
-  padding: 1rem;
-  text-align: center;
-  z-index: 999;
   background-color: var(--header-bg);
-  box-shadow: 0 2px 8px var(--accent-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  pointer-events: none;
+  padding: 1rem;
 }
 
-
-.logo {
+.header-title {
+  color: var(--text-color);
   font-size: 1.25rem;
   font-weight: bold;
-  color: var(--text-color);
-  text-shadow: none;
+  text-align: center;
+  flex-grow: 1;
+  pointer-events: none;
 }
 
+#fps {
+  position: absolute;
+  left: 1rem;
+  font-size: clamp(0.75rem, 3vw, 1rem);
+  background: rgba(0, 0, 0, 0.4);
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  pointer-events: none;
+}
 main {
   position: relative;
   z-index: 2;
@@ -126,7 +124,7 @@ button {
   padding: 0.6rem 1.2rem;
   font-size: 1rem;
   background-color: var(--accent-color);
-  color: white;
+  color: var(--text-color);
   border: none;
   border-radius: 0.5rem;
   cursor: pointer;
@@ -136,27 +134,3 @@ button {
 button:hover {
   background-color: var(--accent-hover);
 }
-
-#themeToggle {
-  position: fixed;
-  bottom: 1rem;
-  right: 1rem;
-  z-index: 3;
-  background-color: rgba(255, 255, 255, 0.1);
-  color: #fff;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 50%;
-  padding: 0.6rem;
-  font-size: 1.2rem;
-  cursor: pointer;
-  backdrop-filter: blur(4px);
-  transition: background-color 0.3s ease;
-}
-
-#themeToggle:hover {
-  background-color: rgba(255, 255, 255, 0.2);
-}
-
-
-
-
